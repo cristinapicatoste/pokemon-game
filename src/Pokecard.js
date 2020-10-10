@@ -1,4 +1,5 @@
 import React from "react";
+import "./Pokecard.css";
 
 const img_API =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
@@ -7,9 +8,11 @@ const Pokecard = (props) => {
   const { id, name, type, exp } = props;
   let imgSrc = `${img_API}${id}.png`;
   return (
-    <div>
+    <div className="Pokecard-container">
       <h1>{name}</h1>
       <img src={imgSrc} alt={name}></img>
+      <p>Type: {type}</p>
+      <p>Exp: {exp}</p>
     </div>
   );
 };
