@@ -14,15 +14,26 @@ const Pokedex = () => {
     { id: 133, name: "Eevee", type: "normal", base_experience: 65 },
   ];
 
+  const newPokemon = pokemon.map((pokemonObject) => {
+    if (pokemonObject.id < 10) {
+      return { ...pokemonObject, id: "00" + pokemonObject.id };
+    }
+    if (pokemonObject.id > 9 && pokemonObject.id < 100) {
+      return { ...pokemonObject, id: "0" + pokemonObject.id };
+    } else {
+      return { ...pokemonObject, id: pokemonObject.id.toString() };
+    }
+  });
+
   return (
     <div className="Pokedex-container">
-      {pokemon.map((p) => (
+      {newPokemon.map((pokemon) => (
         <Pokecard
-          key={p.id}
-          id={p.id}
-          name={p.name}
-          type={p.type}
-          exp={p.base_experience}
+          key={pokemon.id}
+          id={pokemon.id}
+          name={pokemon.name}
+          type={pokemon.type}
+          exp={pokemon.base_experience}
         />
       ))}
     </div>
