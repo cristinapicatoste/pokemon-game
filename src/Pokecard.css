@@ -1,0 +1,7 @@
+.Pokecard-container {
+  border-radius: 25px;
+  border: 1px solid lightgrey;
+  width: 100%;
+  height: 350px;
+  box-shadow: 1px 1px 25px lightgrey;
+}
