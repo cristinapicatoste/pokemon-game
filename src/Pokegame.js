@@ -1,6 +1,7 @@
 import React from "react";
 import Pokecard from "./Pokecard";
 import "./Pokegame.css";
+import createID from "./CreateID";
 
 const Pokegame = () => {
   const pokemon = [
@@ -14,16 +15,7 @@ const Pokegame = () => {
     { id: 133, name: "Eevee", type: "normal", base_experience: 65 },
   ];
 
-  const newPokemon = pokemon.map((pokemonObject) => {
-    if (pokemonObject.id < 10) {
-      return { ...pokemonObject, id: "00" + pokemonObject.id };
-    }
-    if (pokemonObject.id > 9 && pokemonObject.id < 100) {
-      return { ...pokemonObject, id: "0" + pokemonObject.id };
-    } else {
-      return { ...pokemonObject, id: pokemonObject.id.toString() };
-    }
-  });
+  const newPokemon = createID(pokemon);
 
   let player1 = [];
   let player2 = [...newPokemon];
@@ -34,9 +26,33 @@ const Pokegame = () => {
     player1.push(randomPokemon);
   }
 
+  const experiencePlayer1 = player1
+    .map((pokemon) => pokemon.base_experience)
+    .reduce((a, b) => a + b, 0);
+  const experiencePlayer2 = player2
+    .map((pokemon) => pokemon.base_experience)
+    .reduce((a, b) => a + b, 0);
+  //let total = experiencePlayer1.reduce((a, b) => a + b, 0);
+  let isWinner = experiencePlayer1 > experiencePlayer2;
+
+  let winnerPlayer1;
+  let winnerPlayer2;
+
+  if (isWinner) {
+    winnerPlayer1 = <h1 className="Pokegame-h1-winner">WINNER!</h1>;
+    winnerPlayer2 = <h1 className="Pokegame-h1-loser">LOSER!</h1>;
+  } else {
+    winnerPlayer1 = <h1 className="Pokegame-h1-loser">LOSER!</h1>;
+    winnerPlayer2 = <h1 className="Pokegame-h1-winner">WINNER!</h1>;
+  }
+
   return (
     <div>
-      <h3>Player 1</h3>
+      <h2>Player 1</h2>
+      <p>
+        Total experience: <strong>{experiencePlayer1}</strong>
+      </p>
+      {winnerPlayer1}
       <div className="Pokegame-container">
         {player1.map((pokemon) => (
           <Pokecard
@@ -48,7 +64,12 @@ const Pokegame = () => {
           />
         ))}
       </div>
-      <h3>Player 2</h3>
+
+      <h2>Player 2</h2>
+      <p>
+        Total experience: <strong>{experiencePlayer2}</strong>
+      </p>
+      {winnerPlayer2}
       <div className="Pokegame-container">
         {player2.map((pokemon) => (
           <Pokecard
@@ -60,6 +81,7 @@ const Pokegame = () => {
           />
         ))}
       </div>
+      {/* <h1>{isWinner ? "Player 1 wins!" : "Player 2 wins!"}</h1> */}
     </div>
   );
 };

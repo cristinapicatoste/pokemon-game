@@ -6,6 +6,14 @@
     grid-gap: 32px; */
 }
 
+.Pokegame-h1-winner {
+  color: #4caf50;
+}
+
+.Pokegame-h1-loser {
+  color: #e91e66;
+}
+
 @media (max-width: 1200px) {
   .Pokegame-container {
     grid-template-columns: repeat(3, 1fr);
