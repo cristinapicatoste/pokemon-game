@@ -8,10 +8,10 @@ const Pokecard = (props) => {
   let imgSrc = `${img_API}${id}.png`;
   return (
     <div className="Pokecard-container">
-      <h1>{name}</h1>
-      <img src={imgSrc} alt={name}></img>
-      <p>Type: {type}</p>
-      <p>Exp: {exp}</p>
+      <h3>{name}</h3>
+      <img className="Pokecard-img" src={imgSrc} alt={name}></img>
+      <p className="Pokecard-features">Type: {type}</p>
+      <p className="Pokecard-features">Exp: {exp}</p>
     </div>
   );
 };
