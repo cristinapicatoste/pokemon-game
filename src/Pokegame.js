@@ -34,9 +34,6 @@ const Pokegame = () => {
     player1.push(randomPokemon);
   }
 
-  console.log(player2);
-  console.log(player1);
-
   return (
     <div>
       <h3>Player 1</h3>
