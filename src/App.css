@@ -2,3 +2,7 @@
   text-align: center;
   padding: 64px 10%;
 }
+
+.App-h1 {
+  font-size: 3rem;
+}
