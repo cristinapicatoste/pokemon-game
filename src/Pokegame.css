@@ -1,0 +1,13 @@
+.Pokegame-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px; */
+}
+
+@media (max-width: 1200px) {
+  .Pokegame-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} ;

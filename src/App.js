@@ -1,6 +1,5 @@
 import React from "react";
-import Pokedex from "./Pokedex";
-import Pokecard from "./Pokecard";
+import Pokegame from "./Pokegame";
 import "./App.css";
 
 const App = () => {
@@ -8,7 +7,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>POKECARD GAME</h1>
-        <Pokedex />
+        <Pokegame />
       </header>
     </div>
   );

@@ -6,4 +6,4 @@
 `git push origin branch_name` permite subir al repositorio la rama que le indiquemos
 `git branch branch_name` crea una rama con el nombre indicado
 `git checkout branch_name` accedemos a la rama especificada
-`git pull origin master` accedemos a la rama especificada (se suele hacer a master)
+`git pull origin master` actualiza git remoto con versión de github (se suele hacer a master)
