@@ -1,5 +1,5 @@
 import React from "react";
-import Pokegame from "./Pokegame";
+import Pokegame from "./components/Pokegame";
 import "./App.css";
 
 const App = () => {

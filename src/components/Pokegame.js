@@ -16,16 +16,22 @@ const Pokegame = (props) => {
 
   let player1 = [];
   let player2 = [...pokemon];
+  
   while (player1.length < player2.length) {
     let randomIndex = Math.floor(Math.random() * player2.length);
     let randomPokemon = player2.splice(randomIndex, 1)[0];
     player1.push(randomPokemon);
   }
+
   const experiencePlayer1 = player1.reduce((a, b) => a + b.base_experience, 0);
   const experiencePlayer2 = player2.reduce((a, b) => a + b.base_experience, 0);
 
+  // const refresh = () => {
+  //   window.location.overload(false)
+  // }
   return (
     <div>
+      <button >Play again</button>
       <h2>Player 1</h2>
       <Pokedex
         pokemon={player1}
