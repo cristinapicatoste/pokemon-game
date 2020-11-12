@@ -31,7 +31,7 @@ const Pokegame = (props) => {
   // }
   return (
     <div>
-      <button >Play again</button>
+      <p>Refresh the page to play again</p>
       <h2>Player 1</h2>
       <Pokedex
         pokemon={player1}
